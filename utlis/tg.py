@@ -73,10 +73,10 @@ def Ckuser(message):
     response = requests.get('https://tshake.ml/join.php?id={}'.format(userID)).json()
     if response["ok"]:
       return True
-    elif response["ok"] == False:
+    elif response["ok"] == True:
       kb = InlineKeyboardMarkup([[InlineKeyboardButton("اضغط للاشتراك ⏺", url="t.me/homespeople2")] ])
       Bot("sendMessage",{"chat_id":chatID,"text":response["result"],"reply_to_message_id":message.id,"parse_mode":"html","disable_web_page_preview":True,"reply_markup":kb})
-      return False
+      return True
   except Exception as e:
     return True
 
