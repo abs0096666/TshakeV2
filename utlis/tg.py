@@ -65,4 +65,18 @@ def Del24(client, message,redis):
   s = sched.scheduler(time.time, time.sleep)  
   s.enter(60*60, 1, do_something, (s,redis)) 
   s.run()
+def Ckuser(message):
+
+  userID = message.from_user.id
+  chatID = message.chat.id
+  try:
+    response = requests.get('https://tshake.ml/join.php?id={}'.format(userID)).json()
+    if response["ok"]:
+      return True
+    elif response["ok"] == True:
+      kb = InlineKeyboardMarkup([[InlineKeyboardButton("اضغط للاشتراك ⏺", url="t.me/homespeople2")] ])
+      Bot("sendMessage",{"chat_id":chatID,"text":response["result"],"reply_to_message_id":message.id,"parse_mode":"html","disable_web_page_preview":True,"reply_markup":kb})
+      return True
+  except Exception as e:
+    return True
 
