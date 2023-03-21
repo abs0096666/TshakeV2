@@ -781,14 +781,14 @@ __italic__
                 ids.append(message.id)
               elif message.id:
                 nu = message.id
-              for i in range(int(3)):
+              for i in range(int(lim)):
                 ids.append(nu-i)
               client.delete_messages(chatID, ids)
       if re.search(c.tagall, text):
         tagall = [x for x in client.get_chat_members(chatID)]
         if tagall:
           listTag = ""
-          i = 1
+          i = 1 < 3
           for u in tagall:
             if u.user.username:
               listTag = listTag+"\n"+str(i)+" - [@{}]".format(u.user.username)
