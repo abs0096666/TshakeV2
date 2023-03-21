@@ -781,7 +781,7 @@ __italic__
                 ids.append(message.id)
               elif message.id:
                 nu = message.id
-              for i in range(int(lim)):
+              for i in range(int(3)):
                 ids.append(nu-i)
               client.delete_messages(chatID, ids)
       if re.search(c.tagall, text):
