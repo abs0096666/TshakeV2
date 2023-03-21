@@ -788,13 +788,14 @@ __italic__
         tagall = [x for x in client.get_chat_members(chatID)]
         if tagall:
           listTag = ""
-          i = 1 < 3
+          i = 1
+          whiel i < 3
           for u in tagall:
             if u.user.username:
               listTag = listTag+"\n"+str(i)+" - [@{}]".format(u.user.username)
             else:
               listTag = listTag+"\n"+str(i)+" - [{}](tg://user?id={})".format(u.user.first_name,u.user.id)
-            i += 1 
+            i += 1
           sendM("NO",listTag,message)
           
       # if re.search(c.Chlang, text):
