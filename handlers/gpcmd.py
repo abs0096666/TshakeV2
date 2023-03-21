@@ -791,10 +791,11 @@ __italic__
           i = 1
           for u in tagall:
             if u.user.username:
-              listTag = listTag+"\n"+str(i)+ < 3" - [@{}]".format(u.user.username)
+              listTag = listTag+"\n"+str(i)+" - [@{}]".format(u.user.username)
             else:
-              listTag = listTag+"\n"+str(i)+ < 3" - [{}](tg://user?id={})".format(u.user.first_name,u.user.id)
+              listTag = listTag+"\n"+str(i)+" - [{}](tg://user?id={})".format(u.user.first_name,u.user.id)
             i += 1
+            while i<3
           sendM("NO",listTag,message)
           
       # if re.search(c.Chlang, text):
