@@ -334,7 +334,7 @@ def locks(client, message,redis):
 
 
   if text == c.Uchat :
-    Bot("setchatpermissions",{"chat_id":chatID,"permissions":json.dumps({"can_send_messages":True,"can_send_media_messages":True,"can_send_polls":True,"can_send_other_messages":True,"can_invite_users":True,"can_add_web_page_previews":True})})
+    Bot("setchatpermissions",{"chat_id":chatID,"permissions":json.dumps({"can_send_messages":True,"can_invite_users":True})})
     send_msg("LUN",client, message,r.unlock,"Lchat",T,redis)
 
 
